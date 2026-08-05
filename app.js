@@ -17,20 +17,52 @@
 
 //------------------------------------------------------------------------------------
 
-let customer = {
-    name: "kamal",
-    age: 12,
-    isActive: true,
+// let customer = {
+//     name: "kamal",
+//     age: 12,
+//     isActive: true,
+// }
+
+// let stringCustomer = JSON.stringify(customer);
+
+// localStorage.setItem("customer", stringCustomer);
+
+// let retCustomer = localStorage.getItem("customer");
+
+// let jsonCustoemr = JSON.parse(retCustomer);
+
+// console.log(jsonCustoemr.name);
+
+// console.log(customer);
+
+
+const customerList = []
+
+
+function btnAddCustomerOnAction(){
+    let customer = {
+        id:document.getElementById("txtcustomerId").value,
+    }
+
+    alert("add customer");
 }
 
-let stringCustomer = JSON.stringify(customer);
+function btnSearchByIdOnAction(){
+    alert("search customer")
+}
 
-localStorage.setItem("customer", stringCustomer);
+function btnDeleteByIdOnAction(){
+    alert("delete customer");
+}
 
-let retCustomer = localStorage.getItem("customer");
+function btnUpdateByIdOnAction(){
+    alert("update customer")
+}
 
-let jsonCustoemr = JSON.parse(retCustomer);
+function btnClearStorageOnAction(){
+    localStorage.clear();
+}
 
-console.log(jsonCustoemr.name);
-
-console.log(customer);
+function btnLoadTableOnAction(){
+    alert("load Table");
+}

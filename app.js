@@ -37,42 +37,80 @@
 
 
 const customerList = []
-
-
-function btnAddCustomerOnAction(){
+function btnAddCustomerOnAction() {
     let customer = {
-        id:document.getElementById("textCustomerId").value,
-        name:document.getElementById("txtCustomerName").value,
-        age:document.getElementById("txtCustomerAge").value,
-        address:document.getElementById("txtCustomerAddress").value,
+        id: document.getElementById("textCustomerId").value,
+        name: document.getElementById("txtCustomerName").value,
+        age: document.getElementById("txtCustomerAge").value,
+        address: document.getElementById("txtCustomerAddress").value,
     }
 
     console.log(customer);
 
-    customerList.push(customer);
+    customerList.push(customer); //add customer
 
     console.log(customerList);
 
-    
+    localStorage.setItem("customerList", JSON.stringify(customerList)); //
+
+
     alert("add customer");
 }
 
-function btnSearchByIdOnAction(){
+//-------------------------------------------------------------------------------
+
+function btnSearchByIdOnAction() {
+    let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+    let customer = customerList.find(customer => {
+        return customer.id === document.getElementById("txtCustomerId").value
+    });
+
+
+    document.getElementById("txtCustomerName").value = customer.name;
+    document.getElementById("txtCustomerAge").value = customer.age;
+    document.getElementById("txtCustomerAddress").value = customer.address;
+
+
     alert("search customer")
 }
 
-function btnDeleteByIdOnAction(){
-    alert("delete customer");
+//------------------------------------------------------------------------------
+
+function btnDeleteByIdOnAction() {
+    let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+    let customerId = document.getElementById("txtCustomerId").value;
+
+    let index = customerList.findIndex(customer => {
+        return customer.id === customerId;
+    })
+
+    customerList.splice(index, 1);
+
+    localStorage.setItem("customerList", JSON.stringify(customerList));
+
+    console.log(customerList);
 }
 
-function btnUpdateByIdOnAction(){
+//--------------------------------------------------------------------------------
+
+function btnUpdateByIdOnAction() {
     alert("update customer")
 }
 
-function btnClearStorageOnAction(){
+//--------------------------------------------------------------------------------
+
+
+function btnClearStorageOnAction() {
     localStorage.clear();
 }
 
-function btnLoadTableOnAction(){
+//--------------------------------------------------------------------------------
+
+
+function btnLoadTableOnAction() {
     alert("load Table");
 }
+
+//--------------------------------------------------------------------------------

@@ -41,9 +41,14 @@ const customerList = []
 
 function btnAddCustomerOnAction(){
     let customer = {
-        id:document.getElementById("txtcustomerId").value,
+        id:document.getElementById("textCustomerId").value,
+        name:document.getElementById("txtCustomerName").value,
+        age:document.getElementById("txtCustomerAge").value,
+        address:document.getElementById("txtCustomerAddress").value,
     }
 
+    console.log(customer);
+    
     alert("add customer");
 }
 

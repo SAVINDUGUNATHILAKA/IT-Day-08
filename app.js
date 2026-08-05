@@ -1,7 +1,14 @@
-//console.log("hu");
+console.log("Hii");
 
-//localStorage.clear()
+// // localStorage.clear()
 
-localStorage.setItem("name","kamal");    //=> Key,value
+localStorage.setItem("name", "ranil");
+localStorage.setItem("name", "wimal");
+localStorage.setItem("name1", "kamal");
 
-localStorage.removeItem("name");
+
+localStorage.removeItem("name1");
+
+let custName = localStorage.getItem("name");
+
+console.log(custName);

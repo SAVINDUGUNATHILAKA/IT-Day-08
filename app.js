@@ -48,6 +48,11 @@ function btnAddCustomerOnAction(){
     }
 
     console.log(customer);
+
+    customerList.push(customer);
+
+    console.log(customerList);
+
     
     alert("add customer");
 }

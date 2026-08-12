@@ -36,7 +36,7 @@
 // console.log(customer);
 
 
-const customerList = []
+const customerList = JSON.parse(localStorage.getItem("customerList"));
 function btnAddCustomerOnAction() {
     let customer = {
         id: document.getElementById("textCustomerId").value,

@@ -49,8 +49,6 @@ function btnAddCustomerOnAction() {
 
     customerList.push(customer); //add customer
 
-    console.log(customerList);
-
     localStorage.setItem("customerList", JSON.stringify(customerList)); //
 
 
@@ -110,7 +108,23 @@ function btnClearStorageOnAction() {
 
 
 function btnLoadTableOnAction() {
-    alert("load Table");
+    let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+    let body = "";
+    customerList.forEach(Element => {
+        body += `
+                <tr>
+             <td>${element.id}</td>
+             <td>${element.name}</td>
+             <td>${element.age}</td>
+             <td>${element.address}</td>
+         </tr>
+         `
+    });
+
+    document.getElementById("tblCustomer").innerHTML = body;
+
+    console.log(body);
 }
 
 //--------------------------------------------------------------------------------
